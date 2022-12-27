@@ -6,6 +6,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+
+//https://stackoverflow.com/questions/3585329/how-to-merge-two-pdf-files-into-one-in-java
 public class Main {
     public static void main(String[] args) throws IOException {
         excelMover();
@@ -52,7 +55,7 @@ public class Main {
             Path target = Paths.get(destination);
             try {
 
-                Files.move(source, target);
+                Files.move(source, target, REPLACE_EXISTING);
                 System.out.println("Success!!!\n");
 
             } catch (IOException e) {
@@ -91,7 +94,7 @@ public class Main {
             Path target = Paths.get(destination);
             try {
 
-                Files.move(source, target);
+                Files.move(source, target, REPLACE_EXISTING);
                 System.out.println("Success!!!\n");
 
             } catch (IOException e) {
